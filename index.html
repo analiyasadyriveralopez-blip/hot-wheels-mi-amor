@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #8b00ff66, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff008855, transparent 30%),
+        linear-gradient(135deg, #02000c, #10002b, #21002f);
+}
+
+/* ESTRELLAS */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: brillo 1.8s infinite alternate;
+}
+
+@keyframes brillo {
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* CORAZONES */
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: subir 6s linear infinite;
+    opacity: .7;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONTENEDOR */
+.container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TITULO */
+h1 {
+    margin: 0;
+    font-size: clamp(40px, 12vw, 80px);
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+    text-shadow:
+        0 0 10px #ff36c8,
+        0 0 25px #8b00ff,
+        0 0 50px #00c8ff;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #ffc9f3;
+}
+
+.love {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+/* CARRO */
+.car {
+    position: relative;
+    width: 330px;
+    height: 130px;
+    margin-top: 35px;
+    animation: flotar 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 18px #00d9ff);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* CUERPO DEL CARRO */
+.body {
+    position: absolute;
+    left: 25px;
+    bottom: 28px;
+    width: 280px;
+    height: 65px;
+    border-radius: 45px 80px 18px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff168f,
+            #7a00ff 45%,
+            #00d9ff
+        );
+
+    box-shadow:
+        inset 0 5px 10px #ffffff99,
+        0 0 25px #ff00cc;
+}
+
+/* VENTANA */
+.window {
+    position: absolute;
+    left: 115px;
+    top: 36px;
+    width: 100px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050018,
+            #30205e
+        );
+
+    clip-path:
+        polygon(
+            15% 100%,
+            28% 0,
+            100% 0,
+            85% 100%
+        );
+
+    border: 2px solid #8beeff;
+}
+
+/* RUEDAS */
+.wheel {
+    position: absolute;
+    bottom: 5px;
+    width: 48px;
+    height: 48px;
+
+    background: #050505;
+    border: 7px solid #777;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #00d9ff;
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.wheel1 {
+    left: 55px;
+}
+
+.wheel2 {
+    right: 55px;
+}
+
+/* LUZ */
+.light {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+
+    width: 12px;
+    height: 22px;
+
+    background: white;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 35px #00eaff;
+}
+
+/* BOTON */
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+
+    border: 2px solid #ff62d8;
+    border-radius: 30px;
+
+    background: #17002a;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 30px #7200ff;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* MENSAJE */
+#mensaje {
+    max-width: 330px;
+    margin-top: 22px;
+
+    font-size: 21px;
+    line-height: 1.5;
+
+    color: #ffd9f7;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #8b00ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
+<div class="star" style="top:8%;left:12%"></div>
+<div class="star" style="top:15%;left:75%"></div>
+<div class="star" style="top:30%;left:90%"></div>
+<div class="star" style="top:55%;left:8%"></div>
+<div class="star" style="top:70%;left:80%"></div>
+<div class="star" style="top:85%;left:30%"></div>
+<div class="star" style="top:40%;left:48%"></div>
+<div class="star" style="top:90%;left:92%"></div>
+<div class="star" style="top:25%;left:35%"></div>
+<div class="star" style="top:65%;left:60%"></div>
+
+<!-- CORAZONES -->
+<div class="heart" style="left:10%;animation-delay:0s">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s">💜</div>
+<div class="heart" style="left:55%;animation-delay:1s">💕</div>
+<div class="heart" style="left:80%;animation-delay:3s">💗</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <h1>MI AMOR ❤️</h1>
+
+    <div class="subtitle">
+        GALAXY EDITION ✦
+    </div>
+
+    <div class="love">
+        🚗🌌 Nuestro amor hasta las estrellas 🌌🚗
+    </div>
+
+    <!-- CARRO -->
+    <div class="car">
+
+        <div class="body"></div>
+
+        <div class="window"></div>
+
+        <div class="light"></div>
+
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+
+    </div>
+
+    <!-- BOTON -->
+    <button onclick="mensaje()">
+        ❤️ TOCA AQUÍ, MI AMOR ❤️
+    </button>
+
+    <!-- MENSAJE -->
+    <div id="mensaje"></div>
+
+</div>
+
+<script>
+
+function mensaje() {
+
+    document.getElementById("mensaje").innerHTML =
+        "❤️ TE AMO MUCHO, MI AMOR ❤️<br><br>" +
+        "Eres mi persona favorita en todo el universo. 🌌💕";
+
+    document.body.animate(
+        [
+            { filter: "brightness(1)" },
+            { filter: "brightness(1.8)" },
+            { filter: "brightness(1)" }
+        ],
+        {
+            duration: 700
+        }
+    );
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #8b00ff66, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff008855, transparent 30%),
+        linear-gradient(135deg, #02000c, #10002b, #21002f);
+}
+
+/* ESTRELLAS */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: brillo 1.8s infinite alternate;
+}
+
+@keyframes brillo {
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* CORAZONES */
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: subir 6s linear infinite;
+    opacity: .7;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONTENEDOR */
+.container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TITULO */
+h1 {
+    margin: 0;
+    font-size: clamp(40px, 12vw, 80px);
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+    text-shadow:
+        0 0 10px #ff36c8,
+        0 0 25px #8b00ff,
+        0 0 50px #00c8ff;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #ffc9f3;
+}
+
+.love {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+/* CARRO */
+.car {
+    position: relative;
+    width: 330px;
+    height: 130px;
+    margin-top: 35px;
+    animation: flotar 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 18px #00d9ff);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* CUERPO DEL CARRO */
+.body {
+    position: absolute;
+    left: 25px;
+    bottom: 28px;
+    width: 280px;
+    height: 65px;
+    border-radius: 45px 80px 18px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff168f,
+            #7a00ff 45%,
+            #00d9ff
+        );
+
+    box-shadow:
+        inset 0 5px 10px #ffffff99,
+        0 0 25px #ff00cc;
+}
+
+/* VENTANA */
+.window {
+    position: absolute;
+    left: 115px;
+    top: 36px;
+    width: 100px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050018,
+            #30205e
+        );
+
+    clip-path:
+        polygon(
+            15% 100%,
+            28% 0,
+            100% 0,
+            85% 100%
+        );
+
+    border: 2px solid #8beeff;
+}
+
+/* RUEDAS */
+.wheel {
+    position: absolute;
+    bottom: 5px;
+    width: 48px;
+    height: 48px;
+
+    background: #050505;
+    border: 7px solid #777;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #00d9ff;
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.wheel1 {
+    left: 55px;
+}
+
+.wheel2 {
+    right: 55px;
+}
+
+/* LUZ */
+.light {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+
+    width: 12px;
+    height: 22px;
+
+    background: white;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 35px #00eaff;
+}
+
+/* BOTON */
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+
+    border: 2px solid #ff62d8;
+    border-radius: 30px;
+
+    background: #17002a;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 30px #7200ff;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* MENSAJE */
+#mensaje {
+    max-width: 330px;
+    margin-top: 22px;
+
+    font-size: 21px;
+    line-height: 1.5;
+
+    color: #ffd9f7;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #8b00ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
+<div class="star" style="top:8%;left:12%"></div>
+<div class="star" style="top:15%;left:75%"></div>
+<div class="star" style="top:30%;left:90%"></div>
+<div class="star" style="top:55%;left:8%"></div>
+<div class="star" style="top:70%;left:80%"></div>
+<div class="star" style="top:85%;left:30%"></div>
+<div class="star" style="top:40%;left:48%"></div>
+<div class="star" style="top:90%;left:92%"></div>
+<div class="star" style="top:25%;left:35%"></div>
+<div class="star" style="top:65%;left:60%"></div>
+
+<!-- CORAZONES -->
+<div class="heart" style="left:10%;animation-delay:0s">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s">💜</div>
+<div class="heart" style="left:55%;animation-delay:1s">💕</div>
+<div class="heart" style="left:80%;animation-delay:3s">💗</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <h1>MI AMOR ❤️</h1>
+
+    <div class="subtitle">
+        GALAXY EDITION ✦
+    </div>
+
+    <div class="love">
+        🚗🌌 Nuestro amor hasta las estrellas 🌌🚗
+    </div>
+
+    <!-- CARRO -->
+    <div class="car">
+
+        <div class="body"></div>
+
+        <div class="window"></div>
+
+        <div class="light"></div>
+
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+
+    </div>
+
+    <!-- BOTON -->
+    <button onclick="mensaje()">
+        ❤️ TOCA AQUÍ, MI AMOR ❤️
+    </button>
+
+    <!-- MENSAJE -->
+    <div id="mensaje"></div>
+
+</div>
+
+<script>
+
+function mensaje() {
+
+    document.getElementById("mensaje").innerHTML =
+        "❤️ TE AMO MUCHO, MI AMOR ❤️<br><br>" +
+        "Eres mi persona favorita en todo el universo. 🌌💕";
+
+    document.body.animate(
+        [
+            { filter: "brightness(1)" },
+            { filter: "brightness(1.8)" },
+            { filter: "brightness(1)" }
+        ],
+        {
+            duration: 700
+        }
+    );
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #8b00ff66, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff008855, transparent 30%),
+        linear-gradient(135deg, #02000c, #10002b, #21002f);
+}
+
+/* ESTRELLAS */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: brillo 1.8s infinite alternate;
+}
+
+@keyframes brillo {
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* CORAZONES */
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: subir 6s linear infinite;
+    opacity: .7;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONTENEDOR */
+.container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TITULO */
+h1 {
+    margin: 0;
+    font-size: clamp(40px, 12vw, 80px);
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+    text-shadow:
+        0 0 10px #ff36c8,
+        0 0 25px #8b00ff,
+        0 0 50px #00c8ff;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #ffc9f3;
+}
+
+.love {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+/* CARRO */
+.car {
+    position: relative;
+    width: 330px;
+    height: 130px;
+    margin-top: 35px;
+    animation: flotar 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 18px #00d9ff);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* CUERPO DEL CARRO */
+.body {
+    position: absolute;
+    left: 25px;
+    bottom: 28px;
+    width: 280px;
+    height: 65px;
+    border-radius: 45px 80px 18px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff168f,
+            #7a00ff 45%,
+            #00d9ff
+        );
+
+    box-shadow:
+        inset 0 5px 10px #ffffff99,
+        0 0 25px #ff00cc;
+}
+
+/* VENTANA */
+.window {
+    position: absolute;
+    left: 115px;
+    top: 36px;
+    width: 100px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050018,
+            #30205e
+        );
+
+    clip-path:
+        polygon(
+            15% 100%,
+            28% 0,
+            100% 0,
+            85% 100%
+        );
+
+    border: 2px solid #8beeff;
+}
+
+/* RUEDAS */
+.wheel {
+    position: absolute;
+    bottom: 5px;
+    width: 48px;
+    height: 48px;
+
+    background: #050505;
+    border: 7px solid #777;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #00d9ff;
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.wheel1 {
+    left: 55px;
+}
+
+.wheel2 {
+    right: 55px;
+}
+
+/* LUZ */
+.light {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+
+    width: 12px;
+    height: 22px;
+
+    background: white;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 35px #00eaff;
+}
+
+/* BOTON */
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+
+    border: 2px solid #ff62d8;
+    border-radius: 30px;
+
+    background: #17002a;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 30px #7200ff;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* MENSAJE */
+#mensaje {
+    max-width: 330px;
+    margin-top: 22px;
+
+    font-size: 21px;
+    line-height: 1.5;
+
+    color: #ffd9f7;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #8b00ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
+<div class="star" style="top:8%;left:12%"></div>
+<div class="star" style="top:15%;left:75%"></div>
+<div class="star" style="top:30%;left:90%"></div>
+<div class="star" style="top:55%;left:8%"></div>
+<div class="star" style="top:70%;left:80%"></div>
+<div class="star" style="top:85%;left:30%"></div>
+<div class="star" style="top:40%;left:48%"></div>
+<div class="star" style="top:90%;left:92%"></div>
+<div class="star" style="top:25%;left:35%"></div>
+<div class="star" style="top:65%;left:60%"></div>
+
+<!-- CORAZONES -->
+<div class="heart" style="left:10%;animation-delay:0s">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s">💜</div>
+<div class="heart" style="left:55%;animation-delay:1s">💕</div>
+<div class="heart" style="left:80%;animation-delay:3s">💗</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <h1>MI AMOR ❤️</h1>
+
+    <div class="subtitle">
+        GALAXY EDITION ✦
+    </div>
+
+    <div class="love">
+        🚗🌌 Nuestro amor hasta las estrellas 🌌🚗
+    </div>
+
+    <!-- CARRO -->
+    <div class="car">
+
+        <div class="body"></div>
+
+        <div class="window"></div>
+
+        <div class="light"></div>
+
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+
+    </div>
+
+    <!-- BOTON -->
+    <button onclick="mensaje()">
+        ❤️ TOCA AQUÍ, MI AMOR ❤️
+    </button>
+
+    <!-- MENSAJE -->
+    <div id="mensaje"></div>
+
+</div>
+
+<script>
+
+function mensaje() {
+
+    document.getElementById("mensaje").innerHTML =
+        "❤️ TE AMO MUCHO, MI AMOR ❤️<br><br>" +
+        "Eres mi persona favorita en todo el universo. 🌌💕";
+
+    document.body.animate(
+        [
+            { filter: "brightness(1)" },
+            { filter: "brightness(1.8)" },
+            { filter: "brightness(1)" }
+        ],
+        {
+            duration: 700
+        }
+    );
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Amor ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at 20% 20%, #8b00ff66, transparent 30%),
+        radial-gradient(circle at 80% 80%, #ff008855, transparent 30%),
+        linear-gradient(135deg, #02000c, #10002b, #21002f);
+}
+
+/* ESTRELLAS */
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: brillo 1.8s infinite alternate;
+}
+
+@keyframes brillo {
+    from {
+        opacity: .2;
+        transform: scale(.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+/* CORAZONES */
+.heart {
+    position: absolute;
+    font-size: 18px;
+    animation: subir 6s linear infinite;
+    opacity: .7;
+}
+
+@keyframes subir {
+    from {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CONTENEDOR */
+.container {
+    position: relative;
+    z-index: 5;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* TITULO */
+h1 {
+    margin: 0;
+    font-size: clamp(40px, 12vw, 80px);
+    font-style: italic;
+    font-weight: 900;
+    color: white;
+    text-shadow:
+        0 0 10px #ff36c8,
+        0 0 25px #8b00ff,
+        0 0 50px #00c8ff;
+}
+
+.subtitle {
+    margin-top: 8px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #ffc9f3;
+}
+
+.love {
+    margin-top: 15px;
+    font-size: 18px;
+    color: white;
+}
+
+/* CARRO */
+.car {
+    position: relative;
+    width: 330px;
+    height: 130px;
+    margin-top: 35px;
+    animation: flotar 2s ease-in-out infinite;
+    filter: drop-shadow(0 0 18px #00d9ff);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+}
+
+/* CUERPO DEL CARRO */
+.body {
+    position: absolute;
+    left: 25px;
+    bottom: 28px;
+    width: 280px;
+    height: 65px;
+    border-radius: 45px 80px 18px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff168f,
+            #7a00ff 45%,
+            #00d9ff
+        );
+
+    box-shadow:
+        inset 0 5px 10px #ffffff99,
+        0 0 25px #ff00cc;
+}
+
+/* VENTANA */
+.window {
+    position: absolute;
+    left: 115px;
+    top: 36px;
+    width: 100px;
+    height: 38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050018,
+            #30205e
+        );
+
+    clip-path:
+        polygon(
+            15% 100%,
+            28% 0,
+            100% 0,
+            85% 100%
+        );
+
+    border: 2px solid #8beeff;
+}
+
+/* RUEDAS */
+.wheel {
+    position: absolute;
+    bottom: 5px;
+    width: 48px;
+    height: 48px;
+
+    background: #050505;
+    border: 7px solid #777;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #00d9ff;
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #00d9ff;
+    border-radius: 50%;
+    top: 10px;
+    left: 10px;
+}
+
+.wheel1 {
+    left: 55px;
+}
+
+.wheel2 {
+    right: 55px;
+}
+
+/* LUZ */
+.light {
+    position: absolute;
+    right: 5px;
+    top: 50px;
+
+    width: 12px;
+    height: 22px;
+
+    background: white;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 20px white,
+        0 0 35px #00eaff;
+}
+
+/* BOTON */
+button {
+    margin-top: 35px;
+    padding: 15px 30px;
+
+    border: 2px solid #ff62d8;
+    border-radius: 30px;
+
+    background: #17002a;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px #ff00cc,
+        0 0 30px #7200ff;
+
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+/* MENSAJE */
+#mensaje {
+    max-width: 330px;
+    margin-top: 22px;
+
+    font-size: 21px;
+    line-height: 1.5;
+
+    color: #ffd9f7;
+
+    text-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #8b00ff;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESTRELLAS -->
+<div class="star" style="top:8%;left:12%"></div>
+<div class="star" style="top:15%;left:75%"></div>
+<div class="star" style="top:30%;left:90%"></div>
+<div class="star" style="top:55%;left:8%"></div>
+<div class="star" style="top:70%;left:80%"></div>
+<div class="star" style="top:85%;left:30%"></div>
+<div class="star" style="top:40%;left:48%"></div>
+<div class="star" style="top:90%;left:92%"></div>
+<div class="star" style="top:25%;left:35%"></div>
+<div class="star" style="top:65%;left:60%"></div>
+
+<!-- CORAZONES -->
+<div class="heart" style="left:10%;animation-delay:0s">❤️</div>
+<div class="heart" style="left:25%;animation-delay:2s">💜</div>
+<div class="heart" style="left:55%;animation-delay:1s">💕</div>
+<div class="heart" style="left:80%;animation-delay:3s">💗</div>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <h1>MI AMOR ❤️</h1>
+
+    <div class="subtitle">
+        GALAXY EDITION ✦
+    </div>
+
+    <div class="love">
+        🚗🌌 Nuestro amor hasta las estrellas 🌌🚗
+    </div>
+
+    <!-- CARRO -->
+    <div class="car">
+
+        <div class="body"></div>
+
+        <div class="window"></div>
+
+        <div class="light"></div>
+
+        <div class="wheel wheel1"></div>
+        <div class="wheel wheel2"></div>
+
+    </div>
+
+    <!-- BOTON -->
+    <button onclick="mensaje()">
+        ❤️ TOCA AQUÍ, MI AMOR ❤️
+    </button>
+
+    <!-- MENSAJE -->
+    <div id="mensaje"></div>
+
+</div>
+
+<script>
+
+function mensaje() {
+
+    document.getElementById("mensaje").innerHTML =
+        "❤️ TE AMO MUCHO, MI AMOR ❤️<br><br>" +
+        "Eres mi persona favorita en todo el universo. 🌌💕";
+
+    document.body.animate(
+        [
+            { filter: "brightness(1)" },
+            { filter: "brightness(1.8)" },
+            { filter: "brightness(1)" }
+        ],
+        {
+            duration: 700
+        }
+    );
+}
+
+</script>
+
+</body>
+</html>
